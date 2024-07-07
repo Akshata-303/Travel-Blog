@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/main.css">
+  <title>Travel Blog</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Share Your Travel Experience</h1>
+    <form action="/" method="POST" class="form">
+      <textarea name="blog" class="form-textarea" rows="10" placeholder="Write about your travel adventures..."></textarea>
+      <input type="text" name="imageUrl" class="form-input" placeholder="Enter image URL (optional)">
+      <button type="submit" class="form-submit">Submit</button>
+    </form>
+    <section id="blog-section" class="blog-section">
+      <% if (blog) { %>
+      <article class="blog-item">
+        <h2>Your Travel Blog:</h2>
+        <% if (imageUrl) { %>
+        <img src="<%= imageUrl %>" alt="Travel Image" class="blog-image">
+        <% } %>
+        <p><%= blog %></p>
+      </article>
+      <% } %>
+    </section>
+  </div>
+</body>
+
+</html>
